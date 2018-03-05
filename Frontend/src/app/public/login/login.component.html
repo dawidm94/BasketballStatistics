@@ -2,15 +2,41 @@
 	<div class="row">
 		<div class="col-5 offset-8">
 			<div class="wrapper">
-				<form class="form-signin">
-					<h2 class="form-signin-heading">Please login</h2>
-					<input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" />
-					<input type="password" class="form-control" name="password" placeholder="Password" required=""/>
-					<label class="checkbox">
-						<input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
-					</label>
-					<button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-				</form>
+				<div class="form-signin">
+					<div class="container">
+						<div class="row">
+							<div class="col-6">
+								<span (click)="login()" style="background-color: lightgray" [ngClass]="{'border-dark':showLogin}" class="btn btn-block"> Zaloguj</span>
+							</div>
+							<div class="col-6">
+								<span (click)="registration()" style="background-color: lightgray" [ngClass]="{'border-dark':showRegistration}" class="btn btn-block"> Zarejestruj</span>
+							</div>
+						</div>
+					</div>
+					<br/>
+					<div *ngIf="showLogin">
+						<form>
+						<h3 class="form-signin-heading"> Logowanie</h3>
+						<input type="text" class="form-control" name="username" placeholder="Email" required="" autofocus=""/>
+						<input type="password" class="form-control" name="password" placeholder="Hasło" required=""/>
+						<label class="checkbox">
+							<input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Pamiętaj mnie
+						</label>
+						<button class="btn btn-lg btn-primary btn-block" type="submit">Zaloguj</button>
+						</form>
+					</div>
+					<div *ngIf="showRegistration">
+						<form>
+						<h3 class="form-signin-heading"> Rejestracja</h3>
+						<input type="text" class="form-control" name="mail" placeholder="Email" required="" autofocus=""/>
+						<input style="margin-top: 5px" type="text" class="form-control" name="firstName" placeholder="Imie" required=""/>
+						<input style="margin: 0; margin-top: 5px" type="password" class="form-control" name="pw" placeholder="Hasło" required=""/>
+						<input style="margin: 0; margin-top: 5px" type="password" class="form-control" name="pw2" placeholder="Potwierdź hasło" required=""/>
+						<br/>
+						<button class="btn btn-lg btn-primary btn-block" type="submit">Zaloguj</button>
+						</form>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
