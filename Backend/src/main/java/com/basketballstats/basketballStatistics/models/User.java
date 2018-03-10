@@ -30,10 +30,10 @@ public class User {
 	@Column(name = "USR_EMAIL")
 	private String email;
 
-	@Column(name = "USR_FIRSTNAME")
+	@Column(name = "USR_FIRST_NAME")
 	private String firstName;
 
-	@Column(name = "USR_LASTNAME")
+	@Column(name = "USR_LAST_NAME")
 	private String lastName;
 
 	@Column(name = "USR_CITY")
