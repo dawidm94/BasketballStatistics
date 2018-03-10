@@ -6,10 +6,10 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-6">
-								<span (click)="login()" style="background-color: lightgray" [ngClass]="{'border-dark':showLogin}" class="btn btn-block"> Zaloguj</span>
+								<span (click)="clickLogin()" style="background-color: lightgray" [ngClass]="{'border-dark':showLogin}" class="btn btn-block"> Zaloguj</span>
 							</div>
 							<div class="col-6">
-								<span (click)="registration()" style="background-color: lightgray" [ngClass]="{'border-dark':showRegistration}" class="btn btn-block"> Zarejestruj</span>
+								<span (click)="clickRegistration()" style="background-color: lightgray" [ngClass]="{'border-dark':showRegistration}" class="btn btn-block"> Zarejestruj</span>
 							</div>
 						</div>
 					</div>
@@ -22,8 +22,9 @@
 						<label class="checkbox">
 							<input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Pamiętaj mnie
 						</label>
-						<button class="btn btn-lg btn-primary btn-block" type="submit">Zaloguj</button>
 						</form>
+						<!--TODO: dac ponizszy przycisk o jedno wyzej.-->
+						<button (click)="logIn()" class="btn btn-lg btn-primary btn-block" type="submit">Zaloguj</button>
 					</div>
 					<div *ngIf="showRegistration">
 						<form>
@@ -33,7 +34,7 @@
 						<input style="margin: 0; margin-top: 5px" type="password" class="form-control" name="pw" placeholder="Hasło" required=""/>
 						<input style="margin: 0; margin-top: 5px" type="password" class="form-control" name="pw2" placeholder="Potwierdź hasło" required=""/>
 						<br/>
-						<button class="btn btn-lg btn-primary btn-block" type="submit">Zaloguj</button>
+							<button class="btn btn-lg btn-primary btn-block" type="submit">Zarejestruj</button>
 						</form>
 					</div>
 				</div>
