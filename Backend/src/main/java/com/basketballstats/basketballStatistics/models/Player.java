@@ -3,6 +3,7 @@ package com.basketballstats.basketballStatistics.models;
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.File;
 
 @Entity
 @Table(name = "bs_players")
@@ -35,4 +36,6 @@ public class Player {
 	@Column(name = "PLR_POSITION")
 	private String position;
 
+	@Column(name = "PLR_PHOTO")
+	private File photo;
 }
