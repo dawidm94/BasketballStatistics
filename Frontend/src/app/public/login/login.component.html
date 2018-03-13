@@ -17,13 +17,13 @@
 					<div *ngIf="showLogin">
 						<form>
 						<h3 class="form-signin-heading"> Logowanie</h3>
-						<input type="text" class="form-control" name="username" placeholder="Email" required="" autofocus=""/>
-						<input type="password" class="form-control" name="password" placeholder="Hasło" required=""/>
+						<input [(ngModel)]="login" type="text" class="form-control" name="username" placeholder="Email" required="" autofocus=""/>
+						<input [(ngModel)]="password" type="password" class="form-control" name="password" placeholder="Hasło" required=""/>
 						<label class="checkbox">
 							<input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Pamiętaj mnie
 						</label>
 						</form>
-						<!--TODO: dac ponizszy przycisk o jedno wyzej.-->
+						<!--TODO: dac ponizszy przycisk o jedno wyzej. Teraz nie robie bo nie ma walidacji-->
 						<button (click)="logIn()" class="btn btn-lg btn-primary btn-block" type="submit">Zaloguj</button>
 					</div>
 					<div *ngIf="showRegistration">

@@ -1,6 +1,7 @@
 package com.basketballstats.basketballStatistics.services;
 
 import com.basketballstats.basketballStatistics.dao.UserDao;
+import com.basketballstats.basketballStatistics.models.LoginRequest;
 import com.basketballstats.basketballStatistics.models.User;
 import com.basketballstats.basketballStatistics.packages.Registration;
 import com.basketballstats.basketballStatistics.utils.UserActiveStatus;
@@ -37,6 +38,19 @@ public class UserService {
 	public User registration(Registration registration) {
 		User user = createUser(registration);
 		return userDao.save(user);
+	}
+
+	public User login(LoginRequest loginRequest){
+		try{
+		User user = userDao.findByLogin(loginRequest.getLogin());
+		if(loginRequest.getPassword().equals(user.getPassword())) {
+			return user;
+		}else{
+			return null;
+		}}
+		catch (NullPointerException e){
+			return null;
+		}
 	}
 
 	private User createUser(Registration registration) {
