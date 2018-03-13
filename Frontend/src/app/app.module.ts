@@ -8,7 +8,7 @@ import { routes } from './app.routes';
 import { LoginComponent } from './public/login/login.component';
 import { HomeComponent } from './user/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,7 +21,8 @@ import { FormsModule } from '@angular/forms';
 		BrowserModule,
 		RouterModule.forRoot(routes),
 		HttpClientModule,
-		FormsModule
+		FormsModule,
+		ReactiveFormsModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

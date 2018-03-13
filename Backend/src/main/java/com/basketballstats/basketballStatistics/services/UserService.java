@@ -42,8 +42,8 @@ public class UserService {
 
 	public User login(LoginRequest loginRequest){
 		try{
-		User user = userDao.findByLogin(loginRequest.getLogin());
-		if(loginRequest.getPassword().equals(user.getPassword())) {
+		User user = userDao.findByEmail(loginRequest.getEmail());
+		if(BCrypt.checkpw(loginRequest.getPassword(),user.getPassword())) {
 			return user;
 		}else{
 			return null;
@@ -56,8 +56,8 @@ public class UserService {
 	private User createUser(Registration registration) {
 		String passHashed = BCrypt.hashpw(registration.getPassword(), BCrypt.gensalt());
 		User user = User.builder()
-				.firstName(registration.getName())
-				.email(registration.getEmailAddress())
+				.firstName(registration.getFirstName())
+				.email(registration.getEmail())
 				.active(UserActiveStatus.NOT_ACTIVE)
 				.password(passHashed)
 				.build();

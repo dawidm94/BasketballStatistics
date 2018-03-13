@@ -27,14 +27,15 @@
 						<button (click)="logIn()" class="btn btn-lg btn-primary btn-block" type="submit">Zaloguj</button>
 					</div>
 					<div *ngIf="showRegistration">
-						<form>
+						<form [formGroup]="registrationForm">
 						<h3 class="form-signin-heading"> Rejestracja</h3>
-						<input type="text" class="form-control" name="mail" placeholder="Email" required="" autofocus=""/>
-						<input style="margin-top: 5px" type="text" class="form-control" name="firstName" placeholder="Imie" required=""/>
-						<input style="margin: 0; margin-top: 5px" type="password" class="form-control" name="pw" placeholder="Hasło" required=""/>
-						<input style="margin: 0; margin-top: 5px" type="password" class="form-control" name="pw2" placeholder="Potwierdź hasło" required=""/>
+						<input type="text" formControlName="email" class="form-control" name="email" placeholder="Email" required="" autofocus=""/>
+						<input style="margin-top: 5px" formControlName="firstName" type="text" class="form-control" name="firstName" placeholder="Imie" required=""/>
+						<input style="margin: 0; margin-top: 5px" formControlName="password" type="password" class="form-control" name="pw" placeholder="Hasło" required=""/>
+						<input style="margin: 0; margin-top: 5px" type="password" pPassword class="form-control" name="pw2" placeholder="Potwierdź hasło" required=""/>
 						<br/>
-							<button class="btn btn-lg btn-primary btn-block" type="submit">Zarejestruj</button>
+							<input type="password" pPassword />
+							<button (click)="register()" class="btn btn-lg btn-primary btn-block" type="submit">Zarejestruj</button>
 						</form>
 					</div>
 				</div>

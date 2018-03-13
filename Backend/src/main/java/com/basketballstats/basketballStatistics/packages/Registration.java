@@ -7,8 +7,10 @@ import lombok.*;
 @ToString
 @Builder
 @EqualsAndHashCode
+@AllArgsConstructor
+@NoArgsConstructor
 public class Registration {
-	private String name;
-	private String emailAddress;
+	private String firstName;
+	private String email;
 	private String password;
 }
